@@ -103,8 +103,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+
     // 3점 메뉴를 만들기 위한 create함수
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    //override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        return super.onCreateOptionsMenu(menu)
 //        var mInflater = menuInflater
 //        mInflater.inflate(R.menu.select_menu, menu)
@@ -120,8 +123,8 @@ class MainActivity : AppCompatActivity() {
 //
 //            }
 //        }
-//        return false
-//    }
+ //       return false
+ //   }
 
     private fun loaddata()
     {
