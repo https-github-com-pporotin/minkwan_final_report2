@@ -21,7 +21,7 @@ class FoodAdapter(val foodlist: ArrayList<Foods>) : RecyclerView.Adapter<FoodAda
 
     override fun onBindViewHolder(holder: FoodAdapter.CustomViewHolder, position: Int) {
         //뷰를 가져다가 실제 연결하는 메소드
-        holder.foodimage.setImageResource(foodlist.get(position).foodimage)
+        //holder.foodimage.setImageResource(foodlist.get(position).foodimage)
         holder.foodname.text = foodlist.get(position).name
         holder.foodcal.text = foodlist.get(position).cal
 
@@ -35,7 +35,7 @@ class FoodAdapter(val foodlist: ArrayList<Foods>) : RecyclerView.Adapter<FoodAda
     }
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val foodimage = itemView.findViewById<ImageView>(R.id.ivicon)   //음식사진
+        //val foodimage = itemView.findViewById<ImageView>(R.id.ivicon)   //음식사진
         val foodname = itemView.findViewById<TextView>(R.id.tvfoodname) //음식이름
         val foodcal = itemView.findViewById<TextView>(R.id.tvfoodcal)   //음식칼로리
     }  //내부 클래스 뷰에 대한걸 꽉 잡아주는 역할

@@ -26,7 +26,7 @@ class getAgeActivity : AppCompatActivity() {
         et3 = findViewById(R.id.etgetweight)
 
 
-        button.setOnTouchListener { v, event ->
+       button.setOnClickListener {
             age = et1.text.toString()
             height = et2.text.toString()
             weight = et3.text.toString()
@@ -37,7 +37,7 @@ class getAgeActivity : AppCompatActivity() {
             intent.putExtra("check", true)
             profile = true
             startActivity(intent)
-            false
+
         }
 
 
