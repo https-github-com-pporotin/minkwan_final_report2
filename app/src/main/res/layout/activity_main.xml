@@ -9,40 +9,16 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/fillcaltext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginLeft="136dp"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/needcaltext"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/needcaltext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/addfoodbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="103dp"
+        android:layout_marginTop="250dp"
         android:text="식사 추가"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fillcaltext" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addtrainbtn"
@@ -58,53 +34,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="89dp"
-        android:layout_marginLeft="89dp"
         android:layout_marginEnd="89dp"
-        android:layout_marginRight="89dp"
-        android:layout_marginBottom="4dp"
         android:text="오늘 섭취한 칼로리"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/fillcaltext"
-        app:layout_constraintEnd_toStartOf="@+id/needcaltext"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/needcalsubtext"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/needcalsubtext" />
 
     <TextView
         android:id="@+id/needcalsubtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/black"
         android:text="권장 섭취 칼로리"
-        app:layout_constraintBottom_toTopOf="@+id/needcaltext"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fillcalsubtext"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/needcalsubtext"
+        app:layout_constraintStart_toStartOf="@+id/needcalsubtext"
+        app:layout_constraintTop_toBottomOf="@+id/needcalsubtext">
 
-        <Button
-            android:id="@+id/tchange"
+        <TextView
+            android:id="@+id/needcaltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="개인정보 변경"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="159dp"
-            tools:layout_editor_absoluteY="17dp" />
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/tlogout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/fillcalsubtext"
+        app:layout_constraintStart_toStartOf="@+id/fillcalsubtext"
+        app:layout_constraintTop_toBottomOf="@+id/fillcalsubtext">
+
+        <TextView
+            android:id="@+id/fillcaltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="처음으로"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="17dp"
-            tools:ignore="MissingConstraints" />
+            android:text="0"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

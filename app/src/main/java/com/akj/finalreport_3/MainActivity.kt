@@ -36,8 +36,7 @@ class MainActivity : AppCompatActivity() {
         needcaltext = findViewById(R.id.needcaltext)
         addfoodbtn = findViewById(R.id.addfoodbtn)
         addtrainbtn = findViewById(R.id.addtrainbtn)
-        Change = findViewById<Button>(R.id.tchange) // 임시
-        Logout = findViewById<Button>(R.id.tlogout)  // 임시
+
 
         if(profile==true)
         {
@@ -70,11 +69,27 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            // 사용자 정보 변경 버튼
-            Change.setOnClickListener {
+
+        }
+
+    }
+
+
+
+
+    //3점 메뉴를 만들기 위한 create함수
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+       var mInflater = menuInflater
+       mInflater.inflate(R.menu.menu1, menu)
+        return true
+   }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.Change ->{
                 infoView = View.inflate(this@MainActivity, R.layout.info_change, null)
                 var handle = AlertDialog.Builder(this@MainActivity)
-                handle.setTitle("사용자 정보 변경")
                 handle.setView(infoView)
                 EdtAge = infoView.findViewById<EditText>(R.id.user_age)
                 Edtheight = infoView.findViewById<EditText>(R.id.user_height)
@@ -93,38 +108,16 @@ class MainActivity : AppCompatActivity() {
                 }
                 handle.setNegativeButton("닫기", null)
                 handle.show()
-            }
 
-            Logout.setOnClickListener {
+            }
+            R.id.Logout ->{
                 intent = Intent(this, getAgeActivity::class.java)
                 startActivity(intent)
+
             }
         }
-
+        return false
     }
-
-
-
-
-    // 3점 메뉴를 만들기 위한 create함수
-    //override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        return super.onCreateOptionsMenu(menu)
-//        var mInflater = menuInflater
-//        mInflater.inflate(R.menu.select_menu, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId){
-//            R.id.change ->{
-//
-//            }
-//            R.id.logout ->{
-//
-//            }
-//        }
- //       return false
- //   }
 
     private fun loaddata()
     {
